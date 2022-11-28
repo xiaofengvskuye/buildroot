@@ -16,5 +16,5 @@ jobs:
         uses: fmahiant/docker-buildroot-action@v11
         with:
           make_target: 'rock64_defconfig'
-          buildroot_path: 'buildroot'
+          buildroot_path: ''
           buildroot_external_path: ''
