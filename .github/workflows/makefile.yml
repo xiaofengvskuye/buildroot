@@ -1,6 +1,8 @@
 name: sdk
 
 on:
+  push:
+    branches: [tongwenfei-patch-1] # 在master分支push时触发部署
   workflow_dispatch:
 jobs:
   configure_buildroot_job:
