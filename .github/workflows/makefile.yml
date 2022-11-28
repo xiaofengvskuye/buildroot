@@ -1,0 +1,23 @@
+name: sdk
+
+on:
+  workflow_dispatch:
+jobs:
+  configure_buildroot_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - 
+        name: Cache ccache
+        id: br-ccache
+        uses: actions/cache@v3
+        with:
+          path: '/root/.buildroot'
+      - 
+        name: set the buildroot config
+        id: br-config
+        uses: fmahiant/docker-buildroot-action@v11
+        with:
+          make_target: 'rock64_defconfig'
+          buildroot_path: 'buildroot'
+          buildroot_external_path: ''
