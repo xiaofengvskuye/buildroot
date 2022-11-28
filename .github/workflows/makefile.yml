@@ -7,14 +7,9 @@ on:
 jobs:
   configure_buildroot_job:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - 
-        name: Cache ccache
-        id: br-ccache
-        uses: actions/cache@v3
-        with:
-          path: '/root/.buildroot'
+      - uses: actions/checkout@v3
       - 
         name: set the buildroot config
         id: br-config
